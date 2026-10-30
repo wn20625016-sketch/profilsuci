@@ -1,0 +1,373 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Profil Suci 💗</title>
+
+    <link rel="stylesheet" href="css/bootstrap-grid.css" type="text/css">
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ffe4f1, #ffd1e5, #fff0f7);
+            color: #5e2945;
+            min-height: 100vh;
+        }
+
+        /* NAVBAR */
+        nav {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(15px);
+            padding: 20px 40px;
+            box-shadow: 0 5px 25px rgba(255, 105, 160, 0.15);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            flex-wrap: wrap;
+        }
+
+        nav li,
+        nav a {
+            color: #b52f70;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff4f9a;
+            transform: scale(1.08);
+        }
+
+        /* PROFILE SECTION */
+        .project {
+            position: relative;
+            overflow: hidden;
+            padding: 80px 20px;
+            min-height: 75vh;
+        }
+
+        .project::before {
+            content: "💗";
+            position: absolute;
+            font-size: 180px;
+            top: 20px;
+            left: -40px;
+            opacity: 0.15;
+            transform: rotate(-15deg);
+        }
+
+        .project::after {
+            content: "🎀";
+            position: absolute;
+            font-size: 160px;
+            bottom: 10px;
+            right: -20px;
+            opacity: 0.18;
+            transform: rotate(15deg);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .project h1 {
+            text-align: center;
+            font-size: 48px;
+            color: #d63384;
+            margin-bottom: 10px;
+            text-shadow: 3px 3px 0px #ffffff;
+        }
+
+        .project h1::before {
+            content: "♡ ";
+        }
+
+        .project h1::after {
+            content: " ♡";
+        }
+
+        .project p {
+            text-align: center;
+            font-size: 16px;
+            color: #8b4568;
+            margin-bottom: 35px;
+        }
+
+        /* FORM CARD */
+        form {
+            background: rgba(255, 255, 255, 0.82);
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow:
+                0 20px 50px rgba(210, 70, 130, 0.18),
+                inset 0 0 20px rgba(255, 255, 255, 0.8);
+            border: 3px solid #ffb6d5;
+        }
+
+        form ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        form li {
+            margin-bottom: 22px;
+        }
+
+        label {
+            display: inline-block;
+            margin-bottom: 8px;
+            color: #c52d73;
+            font-weight: 700;
+        }
+
+        label::before {
+            content: "♡ ";
+            color: #ff5c9c;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            border: 2px solid #ffc0d9;
+            border-radius: 15px;
+            padding: 14px 17px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
+            color: #69344f;
+            background: #fff8fb;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: #ff5c9c;
+            background: white;
+            box-shadow: 0 0 15px rgba(255, 92, 156, 0.25);
+            transform: translateY(-2px);
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        /* BUTTON */
+        .button {
+            width: 100%;
+            border: none;
+            padding: 16px;
+            border-radius: 50px;
+            background: linear-gradient(135deg, #ff4f9a, #ff82b6);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            font-size: 17px;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(255, 79, 154, 0.3);
+            transition: 0.3s;
+        }
+
+        .button::before {
+            content: "💗 ";
+        }
+
+        .button::after {
+            content: " 💗";
+        }
+
+        .button:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(255, 79, 154, 0.4);
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            background: #ff9fc5;
+            color: white;
+            padding: 45px 20px;
+            position: relative;
+        }
+
+        footer h2 {
+            font-size: 25px;
+            line-height: 1.6;
+            margin: 0 0 15px;
+        }
+
+        footer h2::before {
+            content: "♡ ";
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 13px;
+            opacity: 0.9;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 600px) {
+
+            nav {
+                padding: 18px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 13px;
+            }
+
+            .project {
+                padding: 50px 15px;
+            }
+
+            .project h1 {
+                font-size: 35px;
+            }
+
+            form {
+                padding: 25px;
+                border-radius: 22px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <ul>
+            <li><a href="index.html#contact">contact</a></li>
+            <li>works</li>
+            <li>experience</li>
+            <li class="empty"></li>
+            <li><a href="profil.html">profil</a></li>
+            <li>
+                <a href="https://instagram.com/" target="_blank">
+                    instagram
+                </a>
+            </li>
+            <li>linkedin</li>
+        </ul>
+    </nav>
+
+    <!-- PROFILE -->
+    <section class="project">
+        <div class="container">
+
+            <h1>My Pinky Profile</h1>
+
+            <p>
+                ✨ Isi data diri kamu dan kenalan lebih dekat denganku! 🎀
+            </p>
+
+            <form id="profilForm">
+
+                <ul>
+
+                    <li>
+                        <label for="nim">NIM</label>
+                        <input
+                            type="text"
+                            id="nim"
+                            name="nim"
+                            placeholder="Masukkan NIM kamu..."
+                            required>
+                    </li>
+
+                    <li>
+                        <label for="nama">Nama</label>
+                        <input
+                            type="text"
+                            id="nama"
+                            name="nama"
+                            placeholder="Nama lengkap..."
+                            required>
+                    </li>
+
+                    <li>
+                        <label for="alamat">Alamat</label>
+                        <textarea
+                            id="alamat"
+                            name="alamat"
+                            rows="3"
+                            placeholder="Tulis alamat kamu..."
+                            required></textarea>
+                    </li>
+
+                    <li>
+                        <label for="hobi">Hobi</label>
+                        <input
+                            type="text"
+                            id="hobi"
+                            name="hobi"
+                            placeholder="Contoh: memasak, makan, traveling..."
+                            required>
+                    </li>
+
+                    <li>
+                        <label for="instagram">Instagram</label>
+                        <input
+                            type="text"
+                            id="instagram"
+                            name="instagram"
+                            placeholder="@username"
+                            required>
+                    </li>
+
+                </ul>
+
+                <button type="submit" class="button">
+                    Simpan Profil
+                </button>
+
+            </form>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact">
+
+        <h2>
+            Let's be friends! 💕<br>
+            Find me here ✨
+        </h2>
+
+        <p>
+            Designed & developed with 💗
+        </p>
+
+    </footer>
+
+    <script src="javascript/js.js"></script>
+
+</body>
+</html>
+```
